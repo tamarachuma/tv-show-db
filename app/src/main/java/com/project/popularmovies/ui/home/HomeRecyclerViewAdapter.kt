@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.project.popularmovies.data.models.Movie
 import com.project.popularmovies.data.models.MovieCardModel
 import com.project.popularmovies.databinding.MovieItemBinding
 import com.project.popularmovies.utils.setImage
 
-class HomeRecyclerViewAdapter(private val onItemClick: (movie: Movie) -> Unit) :
+class HomeRecyclerViewAdapter(private val onItemClick: (movie: MovieCardModel) -> Unit) :
     RecyclerView.Adapter<HomeRecyclerViewAdapter.MovieViewHolder>() {
 
     var movieList: List<MovieCardModel> = emptyList()
@@ -24,8 +23,11 @@ class HomeRecyclerViewAdapter(private val onItemClick: (movie: Movie) -> Unit) :
             notifyItemChanged(itemCount - 1)
         }
 
-    class MovieViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    class MovieViewHolder(val binding: MovieItemBinding, onClickListener: View.OnClickListener) :
+        RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener(onClickListener)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -33,21 +35,23 @@ class HomeRecyclerViewAdapter(private val onItemClick: (movie: Movie) -> Unit) :
             MovieItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
-        return MovieViewHolder(binding)
+        return MovieViewHolder(binding, onClickListener)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.binding.movieName.text = movieList[position].name
+        val item = movieList[position]
+        holder.binding.movieName.text = item.name
         holder.binding.movieRateText.text = "IMDb: "
-        holder.binding.movieRate.text = movieList[position].imdb.toString()
-        holder.binding.movieImage.setImage(movieList[position].image)
+        holder.binding.movieRate.text = item.imdb.toString()
+        holder.binding.movieImage.setImage(item.image)
+        holder.binding.root.tag = item
     }
 
     override fun getItemCount() = movieList.size
 
 
     private val onClickListener = View.OnClickListener { v ->
-        val card = v?.tag as Movie
+        val card = v?.tag as MovieCardModel
         onItemClick.invoke(card)
     }
 }

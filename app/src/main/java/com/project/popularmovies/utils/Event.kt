@@ -13,7 +13,6 @@ class Event<out T>(private val data: T) {
             consumed = true
             data
         }
-
 }
 
 

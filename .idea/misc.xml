@@ -6,15 +6,17 @@
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1915" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/circle.xml" value="0.1935" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/content_container_background.xml" value="0.1915" />
+        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1935" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.167" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1915" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/drawable/input_background.xml" value="0.167" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/activity_base.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/dialog_loading.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/home_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/fragment_similar_movie.xml" value="0.136" />
+        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/home_fragment.xml" value="0.264" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/main_layout.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/movie_details_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/movie_details_fragment.xml" value="0.10878288007133304" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/movie_item.xml" value="0.264" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/search_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tamar_8kd692e/OneDrive/Desktop/Android Apprentice Projects/PopularMovies/app/src/main/res/layout/similar_movie_item.xml" value="0.25416666666666665" />

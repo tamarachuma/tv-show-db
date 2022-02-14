@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.project.popularmovies.R
 import com.project.popularmovies.databinding.HomeFragmentBinding
 import com.project.popularmovies.ui.base.BaseFragment
+import com.project.popularmovies.ui.detail.MovieDetailsFragmentDirections
+import com.project.popularmovies.utils.LoadMoreListenerGrid
 import com.project.popularmovies.utils.startAnimation
 
 
@@ -25,7 +27,7 @@ class HomeFragment : BaseFragment() {
     override fun getViewModelInstance() = viewModel
 
     private val adapter = HomeRecyclerViewAdapter {
-        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it)
+        val action = MovieDetailsFragmentDirections.movieDetailsFragment(it)
         activity?.findNavController(R.id.mainContainer)?.navigate(action)
     }
 
@@ -48,17 +50,24 @@ class HomeFragment : BaseFragment() {
         binding.apply {
             fab.setOnClickListener {
                 fab.isVisible = false
+                fabHome.isVisible = false
                 circle.isVisible = true
                 circle.startAnimation(animation) {
                     findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
                     binding.circle.isVisible = false
                 }
             }
+            fabHome.setOnClickListener {
+                viewModel.onRefresh()
+            }
             recycleView.layoutManager = GridLayoutManager(requireContext(), 2)
             recycleView.adapter = adapter
             viewModel.movie.observe(viewLifecycleOwner) {
                 adapter.movieList = it
             }
+            recycleView.addOnScrollListener(LoadMoreListenerGrid() {
+                viewModel.onScrollEndReached()
+            })
             swipeToRefresh.setOnRefreshListener {
                 viewModel.onRefresh()
             }

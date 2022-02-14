@@ -1,4 +1,5 @@
 package com.project.popularmovies.data.models
+
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import kotlinx.parcelize.Parcelize
@@ -31,4 +32,4 @@ data class Movie(
     val voteAverage: Double,
     @Json(name = "vote_count")
     val voteCount: Int
-): Parcelable
+) : Parcelable
