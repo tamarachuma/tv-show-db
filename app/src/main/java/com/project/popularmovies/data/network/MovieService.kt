@@ -11,7 +11,7 @@ import retrofit2.http.Query
 
 interface MovieService {
 
-    @GET("/3/tv/popular")
+    @GET("tv/popular")
     suspend fun getPopularMovies(@Query("page") page: Int): PaginatedData<List<Movie>>
 
     @GET("tv/{tv_id}")
@@ -23,9 +23,9 @@ interface MovieService {
     suspend fun getMovieByName(
         @Query("query") query: String,
         @Query("page") page: Int
-    ): Result<Movie>
+    ): PaginatedData<List<Movie>>
 
-    @GET("/3/tv/{tv_id}/similar")
+    @GET("tv/{tv_id}/similar")
     suspend fun getSimilarMovies(
         @Path("tv_id") tv_id: Int,
         @Query("page") page: Int

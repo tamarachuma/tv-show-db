@@ -41,7 +41,6 @@ class HomeRecyclerViewAdapter(private val onItemClick: (movie: MovieCardModel) -
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val item = movieList[position]
         holder.binding.movieName.text = item.name
-        holder.binding.movieRateText.text = "IMDb: "
         holder.binding.movieRate.text = item.imdb.toString()
         holder.binding.movieImage.setImage(item.image)
         holder.binding.root.tag = item

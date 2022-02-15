@@ -63,12 +63,13 @@
 
                 <TextView
                     android:id="@+id/movieDescription"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="description"
                     android:textColor="@color/cream"
                     android:textSize="16sp" />
+
             </androidx.cardview.widget.CardView>
 
             <TextView

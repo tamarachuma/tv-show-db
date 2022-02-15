@@ -11,6 +11,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object NetworkClient {
 
     val movieService by lazy { createMovieService() }
+    private const val BASE_IRL = "https://api.themoviedb.org/3/"
+
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = if (BuildConfig.DEBUG)
@@ -21,7 +23,7 @@ object NetworkClient {
 
     private fun createMovieService(): MovieService {
         val retrofitBuilder = Retrofit.Builder()
-        retrofitBuilder.baseUrl(" https://api.themoviedb.org")
+        retrofitBuilder.baseUrl(BASE_IRL)
         retrofitBuilder.client(
             OkHttpClient()
                 .newBuilder()

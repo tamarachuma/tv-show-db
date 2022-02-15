@@ -16,7 +16,6 @@
             android:id="@+id/movieImage"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/sample"
             android:contentDescription="movie poster"
             android:scaleType="center"
             app:layout_constraintDimensionRatio="W,4:3"

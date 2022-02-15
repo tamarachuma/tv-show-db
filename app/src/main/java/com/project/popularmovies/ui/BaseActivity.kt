@@ -1,10 +1,7 @@
 package com.project.popularmovies.ui
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.StringRes
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.ContentFrameLayout
 import com.project.popularmovies.R
 
@@ -22,16 +19,6 @@ abstract class BaseActivity : AppCompatActivity() {
         loadingView = layoutInflater.inflate(R.layout.dialog_loading, contentView, false)
     }
 
-    protected fun showDialog(@StringRes title: Int, message: String) {
-        AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage(message)
-            .setNeutralButton(
-                R.string.common_Ok
-            ) { dialog, _ -> dialog.dismiss() }
-            .setCancelable(true)
-            .show()
-    }
 
     fun showLoading() {
         if (loading) return

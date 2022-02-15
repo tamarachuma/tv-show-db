@@ -11,5 +11,5 @@ data class MovieCardModel(
     val image: String,
     val imdb: Double,
     val overview: String,
-    val firstAirDate: String,
+    val firstAirDate: String
 ): Parcelable

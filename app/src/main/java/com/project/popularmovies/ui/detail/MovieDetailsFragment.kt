@@ -1,5 +1,4 @@
 package com.project.popularmovies.ui.detail
-
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,6 +15,7 @@ import com.project.popularmovies.R
 import com.project.popularmovies.databinding.MovieDetailsFragmentBinding
 import com.project.popularmovies.utils.LoadMoreListenerLinear
 import com.project.popularmovies.utils.setImage
+import java.math.RoundingMode
 
 
 class MovieDetailsFragment : Fragment() {
@@ -67,12 +67,13 @@ class MovieDetailsFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun displayMovieData() {
         val data = movieDetailArgs.result
+        val rounded = data.imdb.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
         binding.apply {
             movieTitle.text = data.name
             movieDescription.text = data.overview
             movieImageDetail.setImage(data.image)
             date.text = "Date: ${data.firstAirDate}"
-            imdb.text = "IMDb: ${data.imdb}"
+            imdb.text = "IMDb: ${rounded}"
         }
     }
 

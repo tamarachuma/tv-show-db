@@ -10,9 +10,8 @@ object Repository {
 
     suspend fun getMovieById(id: Int) = NetworkClient.movieService.getMovieById(id).result
 
-    suspend fun getMovieByName(string: String, page: Int): Movie {
-        return NetworkClient.movieService.getMovieByName(string, page).result
-    }
+    suspend fun getMovieByName(string: String, page: Int) = NetworkClient.movieService.getMovieByName(string, page).results
+
 
     suspend fun getSimilarMovies(id: Int, page: Int) = NetworkClient.movieService.getSimilarMovies(id, page)
 }

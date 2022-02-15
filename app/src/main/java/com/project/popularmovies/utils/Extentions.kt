@@ -1,6 +1,7 @@
 package com.project.popularmovies.utils
 
 import android.content.Context
+import android.text.TextUtils
 import android.view.View
 import android.view.animation.Animation
 import android.view.inputmethod.InputMethodManager
@@ -12,8 +13,9 @@ import com.project.popularmovies.data.models.MovieCardModel
 
 fun ImageView.setImage(image: String?) {
     Glide.with(context)
-        .load(image ?: R.drawable.placeholder)
-        .placeholder(R.drawable.placeholder)
+        .load(image)
+        .placeholder(R.drawable.ic_baseline_image_not_supported_24)
+        .centerCrop()
         .into(this)
 }
 
@@ -33,7 +35,6 @@ fun List<Movie>.toMovieCardModel(): List<MovieCardModel> {
 fun View.startAnimation(animation: Animation, onEnd: () -> Unit) {
     animation.setAnimationListener(object : Animation.AnimationListener {
         override fun onAnimationStart(animation: Animation?) = Unit
-
         override fun onAnimationEnd(animation: Animation?) {
             onEnd()
         }
@@ -50,3 +51,4 @@ fun View.showKeyboard() {
         context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
 }
+

@@ -51,7 +51,6 @@ class SimilarMovieAdapter(private val onItemClick: (movie: MovieCardModel) -> Un
     override fun onBindViewHolder(holder: SimilarMovieViewHolder, position: Int) {
         val item = similarMovieList[position]
         holder.binding.similarMovieImage.setImage(item.image)
-        holder.binding.similarDate.text = item.firstAirDate
         holder.binding.similarImdb.text = item.imdb.toString()
         holder.binding.similarTitle.text = item.name
         holder.binding.root.tag = item

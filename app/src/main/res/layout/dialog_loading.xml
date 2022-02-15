@@ -10,6 +10,7 @@
         android:background="@color/cream" />
 
     <ProgressBar
+        android:id="@+id/loader"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
