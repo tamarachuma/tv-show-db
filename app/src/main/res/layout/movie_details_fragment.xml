@@ -80,13 +80,6 @@
                 android:text="@string/imdb" />
 
             <TextView
-                android:id="@+id/genre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/genre" />
-
-            <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:background="@color/teal_700"
+                android:padding="16dp"
                 android:text="@string/similar_movies"
                 android:textAlignment="center"
                 android:textColor="@color/cream"
