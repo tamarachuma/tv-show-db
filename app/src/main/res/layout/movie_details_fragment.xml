@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Title"
+                android:text="@string/title"
                 android:textSize="36sp" />
 
             <TextView
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="description"
+                    android:text="@string/description"
                     android:textColor="@color/cream"
                     android:textSize="16sp" />
 
@@ -77,21 +77,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="IMDb: " />
+                android:text="@string/imdb" />
 
             <TextView
                 android:id="@+id/genre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Genre: " />
+                android:text="@string/genre" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Date: " />
+                android:text="@string/date" />
 
             <TextView
                 android:id="@+id/similarMoviesText"
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:background="@color/teal_700"
-                android:text="Similar Movies"
+                android:text="@string/similar_movies"
                 android:textAlignment="center"
                 android:textColor="@color/cream"
                 android:textSize="16sp" />
@@ -108,8 +108,7 @@
                 android:id="@+id/horizontalRecyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                tools:listitem="@layout/activity_base" />
+                android:orientation="horizontal" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

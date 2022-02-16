@@ -38,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Title" />
+                android:text="Title"
+                android:textColor="@color/teal_700"/>
 
 
             <TextView
@@ -46,21 +47,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="IMDb: " />
+                android:text="IMDb: "
+                android:textColor="@color/teal_700"/>
 
             <TextView
                 android:id="@+id/searchGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Genre: " />
+                android:text="Genre: "
+                android:textColor="@color/teal_700"/>
 
             <TextView
                 android:id="@+id/searchDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Date: " />
+                android:text="Date: "
+                android:textColor="@color/teal_700"/>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

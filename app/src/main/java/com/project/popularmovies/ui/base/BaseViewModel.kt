@@ -17,7 +17,6 @@ abstract class BaseViewModel : ViewModel(), UiErrorInterface {
 
     protected fun showLoading() = _loading.postValue(true)
     protected fun hideLoading() = _loading.postValue(false)
-
     protected fun showDialog(data: DialogData) = _dialog.postValue(Event(data))
 
 

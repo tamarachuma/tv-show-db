@@ -1,4 +1,5 @@
 package com.project.popularmovies.ui.detail
+
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +23,9 @@ class MovieDetailsFragment : Fragment() {
 
     private var _binding: MovieDetailsFragmentBinding? = null
     private val binding get() = _binding!!
+
     private val movieDetailArgs by navArgs<MovieDetailsFragmentArgs>()
+
     private val viewModel by viewModels<MovieDetailsViewModel> {
         MovieDetailsViewModel.CardDetailsViewModelFactory(movieDetailArgs.result)
     }
@@ -38,8 +41,7 @@ class MovieDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = MovieDetailsFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,7 +52,8 @@ class MovieDetailsFragment : Fragment() {
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         val snapHelper: SnapHelper = LinearSnapHelper()
-        snapHelper.attachToRecyclerView(binding.horizontalRecyclerview)
+        snapHelper.attachToRecyclerView(recyclerView)
+
         viewModel.similarMovie.observe(viewLifecycleOwner) {
             adapter.similarMovieList = it
         }
@@ -63,17 +66,15 @@ class MovieDetailsFragment : Fragment() {
     }
 
 
-
     @SuppressLint("SetTextI18n")
     private fun displayMovieData() {
         val data = movieDetailArgs.result
-        val rounded = data.imdb.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
         binding.apply {
             movieTitle.text = data.name
             movieDescription.text = data.overview
             movieImageDetail.setImage(data.image)
             date.text = "Date: ${data.firstAirDate}"
-            imdb.text = "IMDb: ${rounded}"
+            imdb.text = "IMDb: ${data.imdb}"
         }
     }
 

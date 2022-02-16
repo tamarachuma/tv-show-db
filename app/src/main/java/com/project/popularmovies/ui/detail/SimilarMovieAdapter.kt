@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.project.popularmovies.R
 import com.project.popularmovies.data.models.MovieCardModel
-import com.project.popularmovies.databinding.MovieItemBinding
 import com.project.popularmovies.databinding.SimilarMovieItemBinding
 import com.project.popularmovies.utils.setImage
+
 
 class SimilarMovieAdapter(private val onItemClick: (movie: MovieCardModel) -> Unit) :
     RecyclerView.Adapter<SimilarMovieAdapter.SimilarMovieViewHolder>() {

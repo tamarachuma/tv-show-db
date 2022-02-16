@@ -1,4 +1,5 @@
 package com.project.popularmovies.ui.home
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -75,9 +76,7 @@ class HomeFragment : BaseFragment() {
                 adapter.loadingMore = it
                 if (swipeToRefresh.isRefreshing && it) swipeToRefresh.isRefreshing = false
             }
-
         }
-
     }
 
     override fun onDestroy() {

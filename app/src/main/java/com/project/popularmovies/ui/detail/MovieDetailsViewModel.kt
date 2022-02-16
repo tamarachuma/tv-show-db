@@ -1,4 +1,5 @@
 package com.project.popularmovies.ui.detail
+
 import androidx.lifecycle.*
 import com.project.popularmovies.R
 import com.project.popularmovies.data.models.MovieCardModel
@@ -9,13 +10,16 @@ import com.project.popularmovies.utils.toMovieCardModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MovieDetailsViewModel(private val data: MovieCardModel) : BaseViewModel() {
+class MovieDetailsViewModel(data: MovieCardModel) : BaseViewModel() {
 
     private val _similarMovie = MutableLiveData<List<MovieCardModel>>()
     val similarMovie: LiveData<List<MovieCardModel>> get() = _similarMovie
+
     private val _loadingMore = MutableLiveData(false)
     val loadingMore: LiveData<Boolean> get() = _loadingMore
+
     val id = data.id
+
     private var noMoreData = false
 
     private var page = 1

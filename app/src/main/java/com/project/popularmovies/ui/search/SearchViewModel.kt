@@ -15,9 +15,12 @@ import java.lang.Exception
 class SearchViewModel : BaseViewModel() {
     private val _searchMovieList = MutableLiveData<List<MovieCardModel>>()
     val searchMovieList: LiveData<List<MovieCardModel>> get() = _searchMovieList
+
     private val _loadingMore = MutableLiveData(false)
     val loadingMore: LiveData<Boolean> get() = _loadingMore
+
     private var noMoreData = false
+
     private var page = 1
 
 
@@ -27,14 +30,15 @@ class SearchViewModel : BaseViewModel() {
         loadMore(string)
     }
 
-    fun loadMore(string: CharSequence){
+    fun loadMore(string: CharSequence) {
         viewModelScope.launch {
             launch(Dispatchers.IO) {
                 try {
                     _loadingMore.postValue(true)
                     val movies = Repository.getMovieByName(string = string.toString(), page)
-                    _searchMovieList.postValue((_searchMovieList.value ?: emptyList()) + movies.toMovieCardModel())
-                    Log.d("getsCall", "loadMore: movie size ${movies.size}, ${string}")
+                    _searchMovieList.postValue(
+                        (_searchMovieList.value ?: emptyList()) + movies.toMovieCardModel()
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
                 } finally {
@@ -47,13 +51,13 @@ class SearchViewModel : BaseViewModel() {
 
     fun onSearchTextChange(string: CharSequence?) {
         if (string.isNullOrEmpty()) _searchMovieList.postValue(emptyList())
+        page = 1
         viewModelScope.launch {
             launch(Dispatchers.IO) {
                 try {
                     showLoading()
                     _loadingMore.postValue(true)
                     val movies = Repository.getMovieByName(string = string.toString(), page)
-                    Log.d("aftertextChange", "OnSearchTextChange getcalled: movie size ${movies.size}, ${string}")
                     _searchMovieList.postValue(movies.toMovieCardModel())
                 } catch (e: Exception) {
                     e.printStackTrace()

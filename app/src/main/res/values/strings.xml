@@ -5,4 +5,10 @@
     <string name="common_Ok">Ok</string>
     <string name="commont_unknown_error">unknown error</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="date">Date:</string>
+    <string name="genre">Genre:</string>
+    <string name="imdb">IMDb:</string>
+    <string name="description">description</string>
+    <string name="title">Title</string>
 </resources>

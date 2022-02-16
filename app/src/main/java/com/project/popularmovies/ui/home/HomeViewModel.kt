@@ -43,9 +43,7 @@ class HomeViewModel : BaseViewModel() {
             try {
                 showLoading()
                 _loadingMore.postValue(true)
-                val movies = Repository.getAllMovies(
-                    page = page
-                )
+                val movies = Repository.getAllMovies(page = page)
                 noMoreData = movies.results.size == movies.totalResults
                 page++
                 _movie.postValue((_movie.value ?: emptyList()) + movies.results.toMovieCardModel())

@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.project.popularmovies.R
 import com.project.popularmovies.data.models.Movie
 import com.project.popularmovies.data.models.MovieCardModel
+import java.math.RoundingMode
 
 fun ImageView.setImage(image: String?) {
     Glide.with(context)
@@ -19,18 +20,6 @@ fun ImageView.setImage(image: String?) {
         .into(this)
 }
 
-fun List<Movie>.toMovieCardModel(): List<MovieCardModel> {
-    return map {
-        MovieCardModel(
-            id = it.id,
-            name = it.name,
-            image = if (it.posterPath != null) "${"https://image.tmdb.org/t/p/w500"}${it.posterPath}" else "",
-            imdb = it.voteAverage,
-            overview = it.overview,
-            firstAirDate = it.firstAirDate
-        )
-    }
-}
 
 fun View.startAnimation(animation: Animation, onEnd: () -> Unit) {
     animation.setAnimationListener(object : Animation.AnimationListener {
@@ -44,6 +33,19 @@ fun View.startAnimation(animation: Animation, onEnd: () -> Unit) {
     this.startAnimation(animation)
 }
 
+
+fun List<Movie>.toMovieCardModel(): List<MovieCardModel> {
+    return map {
+        MovieCardModel(
+            id = it.id,
+            name = it.name,
+            image = if (it.posterPath != null) "${"https://image.tmdb.org/t/p/w500"}${it.posterPath}" else "",
+            imdb = it.voteAverage.toBigDecimal().setScale(1, RoundingMode.UP).toDouble(),
+            overview = it.overview,
+            firstAirDate = it.firstAirDate
+        )
+    }
+}
 
 fun View.showKeyboard() {
     this.requestFocus()

@@ -52,17 +52,9 @@ class SearchFragment : BaseFragment() {
         val searchInput = binding.searchInput
         searchInput.doAfterTextChanged { text ->
             viewModel.onSearchTextChange(text)
-            Log.d(
-                "aftertextChange",
-                "after text change called from: movie list size in adapter: ${adapter.searchMovieList.size} $text"
-            )
         }
         viewModel.searchMovieList.observe(viewLifecycleOwner) {
             adapter.searchMovieList = it
-            Log.d(
-                "getsCall",
-                "movie list observer : movie list size in adapter: ${adapter.searchMovieList.size}"
-            )
         }
         binding.searchRecyclerView.addOnScrollListener(LoadMoreListenerLinear() {
             viewModel.onScrollEndReached(binding.searchInput.text.toString())
